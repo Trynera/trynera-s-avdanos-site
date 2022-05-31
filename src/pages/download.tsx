@@ -7,8 +7,11 @@ const index = () => {
   const { setToast } = useToasts();
   const { setVisible, bindings } = useModal();
 
-  const download = (type: 'x64' | 'arm' | 'arm64') => {
+  const download = (type: 'x86' | 'x64' | 'arm' | 'arm64') => {
     switch (type) {
+      case 'x86':
+        setShasum('testing-x86-shasum');
+        break;
       case 'x64':
         setShasum('testing-x64-shasum');
         break;
@@ -52,37 +55,7 @@ const index = () => {
         </Text>
         <Spacer h={1} />
         <Grid.Container gap={3} direction={gridDirection} alignItems="center" justify="center">
-          <Grid xs={gridWidth}>
-            <Card
-              style={{ background: theme.palette.accents_1 }}
-              hoverable
-              paddingTop="40px"
-              padding="15px"
-              width="100%"
-            >
-              <Image draggable="false" src="/assets/icons/ARM.png" height="100%" width="170px" />
-              <Spacer h={2} />
-              <Button
-                type="success"
-                shadow
-                onClick={() => {
-                  download('arm');
-                }}
-                margin="10px"
-              >
-                Direct Download
-              </Button>
-              <Button
-                onClick={() => {
-                  download('arm');
-                }}
-                margin="10px"
-              >
-                Torrent Download
-              </Button>
-            </Card>
-          </Grid>
-          <Grid xs={gridWidth}>
+        <Grid xs={gridWidth}>
             <Card
               style={{ background: theme.palette.accents_1 }}
               shadow
@@ -93,6 +66,26 @@ const index = () => {
             >
               <Image draggable="false" src="/assets/icons/x64.png" height="100%" width="170px" />
               <Spacer h={2} />
+              <p>32-Bits</p>
+              <Button
+                type="success"
+                shadow
+                onClick={() => {
+                  download('x86');
+                }}
+                margin="10px"
+              >
+                Direct Download
+              </Button>
+              <Button
+                onClick={() => {
+                  download('x86');
+                }}
+                margin="10px"
+              >
+                Torrent Download
+              </Button>
+              <p>64-Bits</p>
               <Button
                 type="success"
                 shadow
@@ -121,8 +114,28 @@ const index = () => {
               padding="15px"
               width="100%"
             >
-              <Image draggable="false" src="/assets/icons/ARM64.png" height="100%" width="170px" />
+              <Image draggable="false" src="/assets/icons/ARM.png" height="100%" width="170px" />
               <Spacer h={2} />
+              <p>64-Bits</p>
+              <Button
+                type="success"
+                shadow
+                onClick={() => {
+                  download('arm');
+                }}
+                margin="10px"
+              >
+                Direct Download
+              </Button>
+              <Button
+                onClick={() => {
+                  download('arm');
+                }}
+                margin="10px"
+              >
+                Torrent Download
+              </Button>
+              <p>64-Bits</p>
               <Button
                 type="success"
                 shadow

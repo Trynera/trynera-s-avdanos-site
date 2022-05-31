@@ -79,26 +79,27 @@ const Footer: React.FC = () => {
               <Status></Status>
               <Spacer h={0.5} />
               <Tag type="success">
-                Join our{' '}
+                Join our
                 <strong>
                   <Link underline icon color href="https://discord.gg/3TEbHG8hcP">
-                    Discord
+                    &nbsp;Discord
                   </Link>
                 </strong>
               </Tag>
               <Spacer h={0.5} />
               <Tag type="secondary" style={{ color: colorSwitch() }}>
                 <Link underline href="https://" icon>
-                  Subscribe to the <b>Youtube Channel</b>
+                  Subscribe to the <b>&nbsp;Youtube Channel</b>
                 </Link>
               </Tag>
               <Spacer h={0.5} />
 
               <Tag type="secondary" style={{ color: colorSwitch() }}>
-                <Link underline href="https://youtube.com/avdan">
-                  Inspired by <b>Avdan</b>
+                <Link underline href="https://youtube.com/avdan" icon>
+                  Inspired by <b>&nbsp;Avdan</b>
                 </Link>
               </Tag>
+              <Spacer h={0.5} />
             </div>
           </div>
           <p className="copyright">
